@@ -1,3 +1,5 @@
 # Airplane Booking Management System (JavaScript / Node.js)
 Command-line system for managing flights, passengers, bookings and payments.
-Run: node main.js     Test: npm test
+Run: node main.js
+Test: npm test
+Modules: flights (A), bookings (B), payments (C)
