@@ -1,12 +1,15 @@
 // Airplane Booking Management System - entry point.
 const readline = require("readline");
 const flights = require("./flights");
+const bookings = require("./bookings");
 
 const MENU = `
 === Airplane Booking Management System ===
 1. Add flight
 2. List flights
 3. Register passenger
+4. Book seat
+5. Cancel booking
 0. Exit
 `;
 
@@ -14,6 +17,8 @@ const HANDLERS = {
   "1": flights.uiAddFlight,
   "2": flights.uiListFlights,
   "3": flights.uiRegister,
+  "4": bookings.uiBook,
+  "5": bookings.uiCancel,
 };
 
 function createAsk() {
