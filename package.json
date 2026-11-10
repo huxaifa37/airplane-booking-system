@@ -1,0 +1,11 @@
+{
+  "name": "airline-booking-system",
+  "version": "1.0.0",
+  "description": "Airplane Booking Management System",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "node --test --test-reporter=spec"
+  },
+  "license": "MIT"
+}
