@@ -13,10 +13,9 @@ function bookSeat(passengerId, flightCode) {
     throw new Error(`Passenger ${passengerId} not found`);
   }
   const flight = findFlight(data, flightCode);
-  if (flight.booked.length >= flight.seats) {
-    throw new Error(`Flight ${flightCode} is full`);
-  }
-  const seat = flight.booked.length + 1;
+  let seat = 1;
+  while (flight.booked.includes(seat) && seat <= flight.seats) seat++;
+  if (seat > flight.seats) throw new Error(`Flight ${flightCode} is full`);
   flight.booked.push(seat);
   const ref = "BK" + String(data.bookings.length + 1).padStart(4, "0");
   data.bookings.push({ ref, passengerId, flight: flightCode, seat,
