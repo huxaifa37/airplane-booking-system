@@ -2,6 +2,7 @@
 const readline = require("readline");
 const flights = require("./flights");
 const bookings = require("./bookings");
+const payments = require("./payments");
 
 const MENU = `
 === Airplane Booking Management System ===
@@ -10,6 +11,7 @@ const MENU = `
 3. Register passenger
 4. Book seat
 5. Cancel booking
+6. Pay for booking
 0. Exit
 `;
 
@@ -19,6 +21,7 @@ const HANDLERS = {
   "3": flights.uiRegister,
   "4": bookings.uiBook,
   "5": bookings.uiCancel,
+  "6": payments.uiPay,
 };
 
 function createAsk() {
