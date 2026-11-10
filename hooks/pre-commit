@@ -1,0 +1,8 @@
+#!/bin/bash
+echo "pre-commit: running unit tests..."
+node --test --test-reporter=spec > /tmp/hook_out.txt 2>&1
+STATUS=$?
+grep -E '^ℹ (tests|pass|fail)' /tmp/hook_out.txt
+if [ $STATUS -ne 0 ]; then
+  echo "TESTS FAILED - commit aborted."; exit 1
+fi
